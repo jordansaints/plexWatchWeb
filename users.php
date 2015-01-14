@@ -122,6 +122,13 @@
 							
 									$userXml = simplexml_load_string($user['xml']) ;                         
 
+									$userIpAddressesUrl = "http://www.geoplugin.net/xml.gp?ip=".$user['ip_address']."";
+									$userIpAddressesData = simplexml_load_file($userIpAddressesUrl) or "";
+									$userLocation = "n/a";
+									if ($userIpAddressesData !== "" && !empty($userIpAddressesData->geoplugin_city)) {
+										$userLocation = "<a href='https://www.google.com/#q=".$userIpAddressesData->geoplugin_latitude.",".$userIpAddressesData->geoplugin_longitude."'><i class='icon-map-marker icon-white'></i> ".$userIpAddressesData->geoplugin_city.", ".$userIpAddressesData->geoplugin_region."</a>";
+									}
+
 										echo "<tr>";
 											echo "<td align='right' width='40px'>";
 												if (empty($userXml->User['thumb'])) {				

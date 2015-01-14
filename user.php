@@ -643,7 +643,7 @@
 													if (empty($userIpAddressesData->geoplugin_city)) {
 														echo "<td align='left'>n/a</td>";
 													}else{
-														echo "<td align='left'><a href='https://maps.google.com/maps?q=".$userIpAddressesData->geoplugin_city.", ".$userIpAddressesData->geoplugin_region."'><i class='icon-map-marker icon-white'></i> ".$userIpAddressesData->geoplugin_city.", ".$userIpAddressesData->geoplugin_region."</a></td>";
+														echo "<td align='left'><a href='https://www.google.com/#q=".$userIpAddressesData->geoplugin_latitude.",".$userIpAddressesData->geoplugin_longitude."'><i class='icon-map-marker icon-white'></i> ".$userIpAddressesData->geoplugin_city.", ".$userIpAddressesData->geoplugin_region."</a></td>";
 														
 													}
 													
