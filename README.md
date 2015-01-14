@@ -3,6 +3,8 @@ plexWatch/Web - v1.5.4.2
 
 A web front-end for plexWatch.
 
+__This fork has been modified to include city and state location data next to all IP addresses, for ease of keeping tabs on who's watching your server.__
+
 [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Q3HXXBC6ZBENJ)
 
 * plexWatch: https://github.com/ljunkie/plexWatch
