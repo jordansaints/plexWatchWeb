@@ -1,14 +1,13 @@
-plexWatch/Web - v1.5.4.2
+plexWatch/Web - v1.5.4.2 (fork)
 ========================
 
 A web front-end for plexWatch.
 
 __This fork has been modified to include city and state location data next to all IP addresses, for ease of keeping tabs on who's watching your server.__
 
-__I have also updated the external location links (to Google) to use the latitude and longitude values of the IP address (instead of the city, state pair). Those links also now pass through a dereferer service on their way out, for a touch of privacy.__
+__I have also updated the external location links (to Google) to use the latitude and longitude values of the IP address (instead of the city, state pair). Those links also now pass through a dereferer service on their way out, for a dash of privacy.__
 
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Q3HXXBC6ZBENJ)
-
+* plexWatch/Web: https://github.com/ecleese/plexWatchWeb
 * plexWatch: https://github.com/ljunkie/plexWatch
 * plexWatch Plex forum thread: http://forums.plexapp.com/index.php/topic/72552-plexwatch-plex-notify-script-send-push-alerts-on-new-sessions-and-stopped/
 * plexWatch (Windows branch) Plex forum thread: http://forums.plexapp.com/index.php/topic/79616-plexwatch-windows-branch/

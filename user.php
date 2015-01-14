@@ -643,7 +643,7 @@
 													if (empty($userIpAddressesData->geoplugin_city)) {
 														echo "<td align='left'>n/a</td>";
 													}else{
-														echo "<td align='left'><a href='http://www.dereferer.org/?https://www.google.com/%23q=".$userIpAddressesData->geoplugin_latitude.",".$userIpAddressesData->geoplugin_longitude."'><i class='icon-map-marker icon-white'></i> ".$userIpAddressesData->geoplugin_city.", ".$userIpAddressesData->geoplugin_region."</a></td>";
+														echo "<td align='left'><a href='".derefer("https://www.google.com/#q=".$userIpAddressesData->geoplugin_latitude.",".$userIpAddressesData->geoplugin_longitude)."'><i class='icon-map-marker icon-white'></i> ".$userIpAddressesData->geoplugin_city.", ".$userIpAddressesData->geoplugin_region."</a></td>";
 														
 													}
 													
@@ -732,7 +732,7 @@
 													$userIpAddressesUrl = "http://www.geoplugin.net/xml.gp?ip=".$row['ip_address']."";
 													$userIpAddressesData = simplexml_load_file($userIpAddressesUrl) or "";
 													if ($userIpAddressesData !== "" && !empty($userIpAddressesData->geoplugin_city)) {
-														$ipAddressLocations[$row['ip_address']] = "<a href='http://www.dereferer.org/?https://www.google.com/%23q=".$userIpAddressesData->geoplugin_latitude.",".$userIpAddressesData->geoplugin_longitude."'><i class='icon-map-marker icon-white'></i> ".$userIpAddressesData->geoplugin_city.", ".$userIpAddressesData->geoplugin_region."</a>";
+														$ipAddressLocations[$row['ip_address']] = "<a href='".derefer("https://www.google.com/#q=".$userIpAddressesData->geoplugin_latitude.",".$userIpAddressesData->geoplugin_longitude)."'><i class='icon-map-marker icon-white'></i> ".$userIpAddressesData->geoplugin_city.", ".$userIpAddressesData->geoplugin_region."</a>";
 													}else{
 														$ipAddressLocations[$row['ip_address']] = "n/a";
 													}

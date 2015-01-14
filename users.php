@@ -126,7 +126,7 @@
 									$userIpAddressesData = simplexml_load_file($userIpAddressesUrl) or "";
 									$userLocation = "n/a";
 									if ($userIpAddressesData !== "" && !empty($userIpAddressesData->geoplugin_city)) {
-										$userLocation = "<a href='http://www.dereferer.org/?https://www.google.com/%23q=".$userIpAddressesData->geoplugin_latitude.",".$userIpAddressesData->geoplugin_longitude."'><i class='icon-map-marker icon-white'></i> ".$userIpAddressesData->geoplugin_city.", ".$userIpAddressesData->geoplugin_region."</a>";
+										$userLocation = "<a href='".derefer("https://www.google.com/#q=".$userIpAddressesData->geoplugin_latitude.",".$userIpAddressesData->geoplugin_longitude)."'><i class='icon-map-marker icon-white'></i> ".$userIpAddressesData->geoplugin_city.", ".$userIpAddressesData->geoplugin_region."</a>";
 									}
 
 										echo "<tr>";

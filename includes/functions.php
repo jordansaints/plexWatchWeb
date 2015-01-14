@@ -99,4 +99,11 @@ function &keysToLower(&$obj){
 }
 
 
+
+/* function to derefer a link (hides this domain from the website linked to) */
+function derefer($strUrl) {
+  return "http://www.dereferer.org/?".urlencode($strUrl);
+}
+
+
 ?>
