@@ -146,7 +146,7 @@
 
 											echo "<td>".TimeAgo($lastSeenTime)."</td>";
 														
-											echo "<td>".$user['ip_address']."</td>";
+											echo "<td>".$user['ip_address']." (".$userLocation.")</td>";
 													
 											echo "<td>".$user['plays']."</td>";
 					
