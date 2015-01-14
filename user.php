@@ -700,6 +700,7 @@
 									echo "</thead>";
 									echo "<tbody>";
 									$rowCount = 0;
+									$ipAddressLocations = [];
 									while ($row = $results->fetchArray()) {
 										$rowCount++;
 										$request_url = $row['xml'];
@@ -727,8 +728,18 @@
 												echo "<td align='left'>n/a</td>";
 
 											}else{
+												if (empty($ipAddressLocations[$row['ip_address']])) {
+													$userIpAddressesUrl = "http://www.geoplugin.net/xml.gp?ip=".$row['ip_address']."";
+													$userIpAddressesData = simplexml_load_file($userIpAddressesUrl) or "";
+													if ($userIpAddressesData !== "" && !empty($userIpAddressesData->geoplugin_city)) {
+														$ipAddressLocations[$row['ip_address']] = "<a href='https://www.google.com/#q=".$userIpAddressesData->geoplugin_latitude.",".$userIpAddressesData->geoplugin_longitude."'><i class='icon-map-marker icon-white'></i> ".$userIpAddressesData->geoplugin_city.", ".$userIpAddressesData->geoplugin_region."</a>";
+													}else{
+														$ipAddressLocations[$row['ip_address']] = "n/a";
+													}
 
-												echo "<td align='left'>".$row['ip_address']."</td>";
+												}
+
+												echo "<td align='left'>".$row['ip_address']." (".$ipAddressLocations[$row['ip_address']].")</td>";
 											}
 											
 											
